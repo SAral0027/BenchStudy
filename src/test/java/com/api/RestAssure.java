@@ -1,14 +1,14 @@
 package com.api;
 
-import io.restassured.*;
+import io.restassured.RestAssured;
 import io.restassured.specification.RequestSpecification;
 
 public class RestAssure {
-	RequestSpecification reqSpec;
 	public static void main(String[] args) {
-		RestAssured.baseURI = "https://reqres.in/";
-		
-		
-		
+		RestAssured.baseURI = "https://reqres.in/api/users?page=2";
+		RestAssured.given().
+		when().get().
+		then().statusCode(200).log().all();
+				
 	}
 }
