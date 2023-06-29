@@ -9,5 +9,6 @@ public class RestAssure {
 		RestAssured.given().
 		when().get().
 		then().assertThat().statusCode(200).log().all();	
+		System.out.println("Saral");
 	}
 }
